@@ -1,5 +1,6 @@
 package com.gadomska.storeback.config;
 
+import com.gadomska.storeback.service.UserSecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private UserSecurityService userSecurityService;
 
     private BCryptPasswordEncoder bCryptPasswordEncoder(){
-        return SecurityUtility.passwordEncoder();
+        return SecurityUtility.bCryptPasswordEncoder();
     }
 
     private static final String[] PUBLIC_MATCHERS = {
